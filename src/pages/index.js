@@ -71,8 +71,14 @@ export default function Home() {
                   attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                 <Marker position={[51.4953, -0.100]}>
-                  <Popup>
+                 <Marker position={[51.4953, -0.100]}
+                 eventHandlers={{
+                  click: () => {
+                    alert('marker clicked')
+                  }, 
+                }}
+                 >
+                  {/* <Popup>
                     <div>
                       <h1> This is my title on the pop up</h1>
                       <div>
@@ -83,7 +89,7 @@ export default function Home() {
                         </p>
                       </div>
                     </div>
-                  </Popup>
+                  </Popup> */}
                 </Marker>
                 <LayerGroup>
                   <Circle center={center} pathOptions={fillBlueOptions} radius={200} />
